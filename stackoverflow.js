@@ -1,13 +1,24 @@
-function goToSectionPage(sectionId) {
-  const section = document.getElementById(sectionId);
-  section.scrollIntoView({ behavior: "smooth", block: "center" });
+function goToSectionPage(sectionElement) {
+  sectionElement.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
 function addEventHandlerToHeaderButton(buttonId, sectionId) {
   const buttonTarget = document.getElementById(buttonId);
+
   buttonTarget.addEventListener("click", function () {
-    goToSectionPage(sectionId);
+    const parentSectionElement = document.querySelector("main");
+    const targetSection = document.getElementById(sectionId);
+
+    goToSectionPage(targetSection);
+    addCssClassToSelecedtSession(parentSectionElement, targetSection, "selected");    
   });
+}
+
+function addCssClassToSelecedtSession(parentWrapSectionElements, selectedSectionElement, className) {
+  for(let section of parentWrapSectionElements.children){
+    section.classList.remove(className)
+  }
+  selectedSectionElement.classList.add(className)
 }
 
 addEventHandlerToHeaderButton("headerSection1", "section1");

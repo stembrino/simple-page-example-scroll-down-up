@@ -26,3 +26,16 @@ header {
 main {
     padding-top: 35px;
 }
+
+.selected {
+    animation: sectionSelected 2s forwards;
+}
+
+@keyframes sectionSelected {
+    from {
+        background-color: #fff;
+    }
+    to {
+        background-color: #c4c4c4;
+    }
+}
