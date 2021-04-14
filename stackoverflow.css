@@ -1,0 +1,28 @@
+.section {
+    display: block;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.header-item {
+    cursor: pointer;
+    padding: 0 8px;
+    font-family: system-ui;
+    color: #00000080;
+}
+
+.header-item:hover {
+    border-bottom: 1px solid black;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+}
+
+main {
+    padding-top: 35px;
+}
